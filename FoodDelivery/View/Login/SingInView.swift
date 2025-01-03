@@ -24,7 +24,7 @@ struct SingInView: View {
             
             ScrollView{
                 VStack{
-                    Text("Get your groceries \nwith us")
+                    Text("Get your groceries \nwith nectar")
                         .font(.customfont(.semibold, fontSize: 26))
                         .foregroundColor(.primaryText)
                         .multilineTextAlignment(.leading)
