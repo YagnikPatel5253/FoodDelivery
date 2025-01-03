@@ -28,8 +28,11 @@ struct WelcomeView: View {
                     .multilineTextAlignment(.center)
                     .padding(.bottom, 30)
                 
-                RoundButton(title: "Get Started"){
-                    // code
+                NavigationLink{
+                    SingInView()
+                } label: {
+                    RoundButton(title: "Get Started"){
+                    }
                 }
                 
                 Spacer()
@@ -46,5 +49,7 @@ struct WelcomeView: View {
 }
 
 #Preview {
-    WelcomeView()
+    NavigationView{
+        WelcomeView()
+    }
 }
