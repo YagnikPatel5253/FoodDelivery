@@ -22,7 +22,7 @@ struct WelcomeView: View {
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
                 
-                Text("Get your gloceries faster")
+                Text("Get your gloceries fast")
                     .font(.customfont(.medium, fontSize: 16))
                     .foregroundColor(.white.opacity(0.7))
                     .multilineTextAlignment(.center)
