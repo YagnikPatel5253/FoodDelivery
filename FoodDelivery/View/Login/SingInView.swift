@@ -63,7 +63,7 @@ struct SingInView: View {
                             .padding(.bottom, 35)
                         
                         Button {
-                    
+                            // code
                         } label: {
                             HStack{
                                 Image("google_logo")
@@ -71,15 +71,15 @@ struct SingInView: View {
                                     .scaledToFit()
                                     .frame(width: 20, height: 20)
                                     .padding(.trailing, 20)
-
+                            
                             }
                                 Text("Continue with Google")
                                     .font(.customfont(.semibold, fontSize: 18))
                                     .foregroundColor(.white)
                                     .multilineTextAlignment(.center)
                                     .padding(.trailing, 40)
-                                
                         }
+                        
                         
                         .frame( minWidth: 0, maxWidth: .infinity, minHeight: 60, maxHeight: 60 )
                         .background(Color(hex: "5383EC"))
