@@ -50,8 +50,41 @@ struct SingInView: View {
                             .frame(minWidth: 0, maxWidth: .infinity)
                             .padding(.trailing, 188)
                     }
+                    .padding(.bottom, 15)
+                    
+                    
+                    NavigationLink {
+                        LoginView()
+                    } label: {
+                        Text("Continue with SignIn")
+                            .font(.customfont(.semibold, fontSize: 18))
+                            .foregroundColor(.white)
+                            .multilineTextAlignment(.center)
+                    }
+                    .frame( minWidth: 0, maxWidth: .infinity, minHeight: 60, maxHeight: 60 )
+                    .background(Color(hex: "5383EC"))
+                    .cornerRadius(20)
+                    .padding(.horizontal, 20)
+                    .padding(.bottom, 5)
+                    
+                    
+                    NavigationLink {
+                        SignUpView()
+                    } label: {
+                        Text("Continue with SignUp")
+                            .font(.customfont(.semibold, fontSize: 18))
+                            .foregroundColor(.white)
+                            .multilineTextAlignment(.center)
+                    }
+                    .frame( minWidth: 0, maxWidth: .infinity, minHeight: 60, maxHeight: 60 )
+                    .background(Color.primaryApp)
+                    .cornerRadius(20)
+                    .padding(.horizontal, 20)
+                    
                     Divider()
                         .frame(width: 350)
+                    
+                    
                     
                     VStack{
                     
@@ -60,66 +93,29 @@ struct SingInView: View {
                             .foregroundColor(.textTitle)
                             .multilineTextAlignment(.center)
                             .padding(.top, 30)
-                            .padding(.bottom, 35)
+                            .padding(.bottom, 15)
                         
-                        Button {
-                            // code
-                        } label: {
-                            HStack{
-                                Image("google_logo")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 20, height: 20)
-                                    .padding(.trailing, 20)
-                            
-                            }
-                                Text("Continue with Google")
-                                    .font(.customfont(.semibold, fontSize: 18))
-                                    .foregroundColor(.white)
-                                    .multilineTextAlignment(.center)
-                                    .padding(.trailing, 40)
+                        HStack{
+                            Image("google")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 40, height: 40)
+                                .padding(.trailing,5)
+                            Image("facebook")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 40, height: 40)
+                                .padding(.trailing,5)
+                            Image("apple_logo")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 42, height: 42)
                         }
-                        
-                        
-                        .frame( minWidth: 0, maxWidth: .infinity, minHeight: 60, maxHeight: 60 )
-                        .background(Color(hex: "5383EC"))
-                        .cornerRadius(20)
-                        .padding(.horizontal, 20)
-                        
-                        .padding(.bottom, 10)
-                        
-                        Button {
-                    
-                        } label: {
-                            
-                            HStack{
-                                Image("fb_logo")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 20, height: 20)
-                                    .padding(.trailing, 20)
-                                
-                                Text("Continue with Facebook")
-                                    .font(.customfont(.semibold, fontSize: 18))
-                                    .foregroundColor(.white)
-                                    .multilineTextAlignment(.center)
-                                    .padding(.trailing, 21)
-                            }
-                                
-                        }
-                        
-                        .frame( minWidth: 0, maxWidth: .infinity, minHeight: 60, maxHeight: 60 )
-                        .background(Color(hex: "4A6680"))
-                        .cornerRadius(20)
-                        .padding(.horizontal, 20)
                     }
-                    
-                    
-                    
-                    
                 }
-                .padding(.top, 90)
+                .padding(.top, 50)
             }
+
             .onAppear{
                 self.countryObj = Country(phoneCode: "91", isoCode: "IN")
             }
@@ -136,5 +132,7 @@ struct SingInView: View {
 }
 
 #Preview {
-    SingInView()
+    NavigationView{
+        SingInView()
+    }
 }

@@ -61,12 +61,14 @@ struct LoginView: View {
                         .font(.customfont(.semibold, fontSize: 16))
                         .foregroundColor(.primaryText)
                     
-                    Button {
+                    NavigationLink {
+                        SignUpView()
                     } label: {
                         Text("SignUp")
                             .font(.customfont(.semibold, fontSize: 16))
                             .foregroundColor(.primaryApp)
                     }
+
                 }
             }
             .padding(.bottom, 190)
@@ -103,5 +105,7 @@ struct LoginView: View {
 }
 
 #Preview {
-    LoginView()
+    NavigationView{
+        LoginView()
+    }
 }
