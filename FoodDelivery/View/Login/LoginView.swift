@@ -78,8 +78,8 @@ struct LoginView: View {
             
             VStack{
                 HStack{
-                    Button{
-                    // code
+                    NavigationLink{
+                        SingInView()
                     } label: {
                         Image("back")
                             .resizable()

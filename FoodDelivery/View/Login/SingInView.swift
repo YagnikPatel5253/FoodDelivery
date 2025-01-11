@@ -119,6 +119,23 @@ struct SingInView: View {
             .onAppear{
                 self.countryObj = Country(phoneCode: "91", isoCode: "IN")
             }
+            VStack{
+                HStack{
+                    NavigationLink{
+                        WelcomeView()
+                    } label: {
+                        Image("back")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 20, height: 20)
+                    }
+                    Spacer()
+                }
+                Spacer()
+            }
+            .padding(.top, 60)
+            .padding(.horizontal, 20)
+
         }
         .sheet(isPresented: $isShowPicker, content: {
             CountryPickerUI(country: $countryObj)
