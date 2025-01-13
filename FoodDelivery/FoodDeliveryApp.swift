@@ -1,18 +1,17 @@
-//
-//  FoodDeliveryApp.swift
-//  FoodDelivery
-//
-//  Created by yagnik on 03/01/25.
-//
-
 import SwiftUI
 
 @main
 struct FoodDeliveryApp: App {
+    @StateObject var mainVM = MainViewModel.shared
+
     var body: some Scene {
         WindowGroup {
-            NavigationView{
-                WelcomeView()
+            NavigationView {
+                if mainVM.isUserLogin {
+                    MainTabView(mainVM: mainVM) // Pass the ViewModel here
+                } else {
+                    SingInView()
+                }
             }
         }
     }
