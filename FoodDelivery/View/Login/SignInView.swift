@@ -1,7 +1,7 @@
 import SwiftUI
 import CountryPicker
 
-struct SingInView: View {
+struct SignInView: View {
     
     @State var txtMobile : String = ""
     @State var isShowPicker : Bool = false
@@ -96,6 +96,7 @@ struct SingInView: View {
                             .padding(.bottom, 15)
                         
                         HStack{
+                            
                             Image("google")
                                 .resizable()
                                 .scaledToFit()
@@ -150,6 +151,6 @@ struct SingInView: View {
 
 #Preview {
     NavigationView{
-        SingInView()
+        SignInView()
     }
 }

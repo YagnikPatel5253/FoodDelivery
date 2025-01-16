@@ -50,13 +50,20 @@ struct LoginView: View {
                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .trailing)
                 .padding(.bottom, 25)
                 
-                
-                    RoundButton(title: "Log In"){
-                        loginVM.serviceCallLogin()
-                    }
-                
+                Button {
+                    loginVM.serviceCallLogin()
+                } label: {
+                    Text("Get Started")
+                        .font(.customfont(.semibold, fontSize: 18))
+                        .foregroundColor(.white)
+                        .multilineTextAlignment(.center)
+                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 60, maxHeight: 60)
+                }
+                .background(Color.primaryApp)
+                .cornerRadius(20)
                 .padding(.bottom, 10)
-                HStack{
+                
+                HStack {
                     Text("Don't have an account?")
                         .font(.customfont(.semibold, fontSize: 16))
                         .foregroundColor(.primaryText)
@@ -68,7 +75,6 @@ struct LoginView: View {
                             .font(.customfont(.semibold, fontSize: 16))
                             .foregroundColor(.primaryApp)
                     }
-
                 }
             }
             .padding(.bottom, 190)
@@ -78,8 +84,8 @@ struct LoginView: View {
             
             VStack{
                 HStack{
-                    NavigationLink{
-                        SingInView()
+                    NavigationLink {
+                        SignInView()
                     } label: {
                         Image("back")
                             .resizable()

@@ -11,7 +11,6 @@ class MainViewModel: ObservableObject {
     @Published var showError = false
     @Published var errorMessage = ""
     @Published var isUserLogin: Bool = false
-    @Published var userObj: UserModel = UserModel(dict: [:])
     
     init() {
         
@@ -22,12 +21,6 @@ class MainViewModel: ObservableObject {
         }else{
             // User Not Login
         }
-        
-        #if DEBUG
-        txtUsername = "user4"
-        txtEmail = "test@gmail.com"
-        txtPassword = "123456"
-        #endif
         
     }
     
@@ -115,7 +108,6 @@ class MainViewModel: ObservableObject {
         
         Utils.UDSET(data: uDict, key: Globs.userPayload)
         Utils.UDSET(data: true, key: Globs.userLogin)
-        self.userObj = UserModel(dict: uDict)
         self.isUserLogin = true
         
         self.txtUsername = ""

@@ -2,10 +2,9 @@ import SwiftUI
 import CountryPicker
 
 struct CountryPickerUI: UIViewControllerRepresentable {
-    
     @Binding var country: Country?
-       
-    class Coordinator:NSObject, CountryPickerDelegate {
+    
+    class Coordinator: NSObject, CountryPickerDelegate {
         var parent: CountryPickerUI
         
         init(_ parent: CountryPickerUI) {
@@ -18,11 +17,9 @@ struct CountryPickerUI: UIViewControllerRepresentable {
     }
     
     func makeUIViewController(context: Context) -> some CountryPickerViewController {
-        
         let countryPicker = CountryPickerViewController()
-        countryPicker.selectedCountry  = "IN"
+        countryPicker.selectedCountry = "IN"
         countryPicker.delegate = context.coordinator
-        
         return countryPicker
     }
     
@@ -33,8 +30,5 @@ struct CountryPickerUI: UIViewControllerRepresentable {
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
-    
-    
-    
 }
 
