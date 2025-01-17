@@ -18,7 +18,7 @@ struct SignUpView: View {
                         .scaledToFit()
                         .frame(width: 50, height: 50)
                         .padding(.top, 100)
-                  
+                    
                     Spacer()
                     
                         .padding(.bottom, 65)
@@ -36,10 +36,10 @@ struct SignUpView: View {
                     
                     LineTextField( title: "Username", placholder: "Enter your username", txt: $mainVM.txtUsername)
                         .padding(.bottom, 30)
-
+                    
                     LineTextField( title: "Email", placholder: "Enter your email address", txt: $mainVM.txtEmail, keyboardType: .emailAddress)
                         .padding(.bottom, 30)
-                                    
+                    
                     LineSecureField( title: "Password", placholder: "Enter your password", txt: $mainVM.txtPassword, isShowPassword: $mainVM.isShowPassword)
                         .padding(.bottom,8)
                     
@@ -68,7 +68,7 @@ struct SignUpView: View {
                                 .padding(.top, 1)
                                 .padding(.leading, -3)
                         }
-                                                
+                        
                     }
                     .multilineTextAlignment(.leading)
                     .padding(.leading, -60)
@@ -100,13 +100,13 @@ struct SignUpView: View {
                                 .font(.customfont(.semibold, fontSize: 16))
                                 .foregroundColor(.primaryApp)
                         }
-
+                        
                     }
                 }
                 .padding(.bottom, 190)
                 .padding(.horizontal, 20)
                 .padding(.bottom, .bottomInsets)
-
+                
             }
             
             VStack{
@@ -127,7 +127,7 @@ struct SignUpView: View {
             .padding(.horizontal, 20)
         }
         .alert(isPresented: $mainVM.showError, content: {
-                   Alert(title: Text(Globs.AppName), message: Text(mainVM.errorMessage) , dismissButton: .default(Text("Ok")))
+            Alert(title: Text(Globs.AppName), message: Text(mainVM.errorMessage) , dismissButton: .default(Text("Ok")))
         })
         .navigationTitle("")
         .navigationBarHidden(true)

@@ -4,7 +4,7 @@ struct LoginView: View {
     
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     @StateObject var loginVM = MainViewModel.shared;
-//  @ObservedObject var loginVm = MainViewModel.shared;
+    //  @ObservedObject var loginVm = MainViewModel.shared;
     
     var body: some View {
         ZStack{
@@ -19,7 +19,7 @@ struct LoginView: View {
                     .scaledToFit()
                     .frame(width: 50, height: 50)
                     .padding(.top, 100)
-              
+                
                 Spacer()
                 
                 Text("Login")
@@ -33,10 +33,10 @@ struct LoginView: View {
                     .foregroundColor(.secondaryText)
                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                     .padding(.bottom, 30)
-
+                
                 LineTextField( title: "Email", placholder: "Enter your email address", txt: $loginVM.txtEmail, keyboardType: .emailAddress)
                     .padding(.bottom, 30)
-                                
+                
                 LineSecureField( title: "Password", placholder: "Enter your password", txt: $loginVM.txtPassword, isShowPassword: $loginVM.isShowPassword)
                     .padding(.bottom,10)
                 
@@ -80,7 +80,7 @@ struct LoginView: View {
             .padding(.bottom, 190)
             .padding(.horizontal, 20)
             .padding(.bottom, .bottomInsets)
-
+            
             
             VStack{
                 HStack{

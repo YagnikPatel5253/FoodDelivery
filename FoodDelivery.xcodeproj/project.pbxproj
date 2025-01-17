@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		12C31DDC2D283F2400CE9A43 /* CountryPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 12C31DDB2D283F2400CE9A43 /* CountryPicker */; };
+		12FEA1F92D393A8C00D495A7 /* iPhoneNumberField in Frameworks */ = {isa = PBXBuildFile; productRef = 12FEA1F82D393A8C00D495A7 /* iPhoneNumberField */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12C31DDC2D283F2400CE9A43 /* CountryPicker in Frameworks */,
+				12FEA1F92D393A8C00D495A7 /* iPhoneNumberField in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,7 +130,7 @@
 			);
 			name = FoodDelivery;
 			packageProductDependencies = (
-				12C31DDB2D283F2400CE9A43 /* CountryPicker */,
+				12FEA1F82D393A8C00D495A7 /* iPhoneNumberField */,
 			);
 			productName = FoodDelivery;
 			productReference = 1267424E2D2797150049F339 /* FoodDelivery.app */;
@@ -215,7 +215,7 @@
 			mainGroup = 126742452D2797150049F339;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				12C31DDA2D283F2400CE9A43 /* XCRemoteSwiftPackageReference "CountryPicker" */,
+				12FEA1F72D393A8C00D495A7 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 1267424F2D2797150049F339 /* Products */;
@@ -592,21 +592,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		12C31DDA2D283F2400CE9A43 /* XCRemoteSwiftPackageReference "CountryPicker" */ = {
+		12FEA1F72D393A8C00D495A7 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/mobven/CountryPicker.git";
+			repositoryURL = "https://github.com/MojtabaHs/iPhoneNumberField.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.3;
+				minimumVersion = 0.10.4;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		12C31DDB2D283F2400CE9A43 /* CountryPicker */ = {
+		12FEA1F82D393A8C00D495A7 /* iPhoneNumberField */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 12C31DDA2D283F2400CE9A43 /* XCRemoteSwiftPackageReference "CountryPicker" */;
-			productName = CountryPicker;
+			package = 12FEA1F72D393A8C00D495A7 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */;
+			productName = iPhoneNumberField;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -1,13 +1,22 @@
 {
-  "originHash" : "980296c42f1ad539ebe5516f96c24798753843721df3b547edf89f976d4630b9",
+  "originHash" : "564d64f4ba38eec1299e75d01ba099730cc8439177a278a96bc4c799a74d3fb4",
   "pins" : [
     {
-      "identity" : "countrypicker",
+      "identity" : "iphonenumberfield",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/mobven/CountryPicker.git",
+      "location" : "https://github.com/MojtabaHs/iPhoneNumberField.git",
       "state" : {
-        "revision" : "6225c2933fea6abdb8171718b22bbe289706a7aa",
-        "version" : "2.0.3"
+        "revision" : "cd961621559393c5220c6c955690ecc52318e753",
+        "version" : "0.10.4"
+      }
+    },
+    {
+      "identity" : "phonenumberkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/marmelroy/PhoneNumberKit",
+      "state" : {
+        "revision" : "c107075aa8d394be7aced273a46e944afe8b321b",
+        "version" : "3.8.0"
       }
     }
   ],

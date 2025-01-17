@@ -1,14 +1,16 @@
 import SwiftUI
-import CountryPicker
+import iPhoneNumberField
 
 struct SignInView: View {
+    @Environment(\.dismiss) private var dismiss
+    @Environment(\.presentationMode) var presentationMode
+    @State private var phoneNumber = ""
+    @State private var selectedCountry = Country.india
+    @State private var showCountryPicker = false
     
-    @State var txtMobile : String = ""
-    @State var isShowPicker : Bool = false
-    @State var countryObj : Country?
     var body: some View {
+        
         ZStack{
-            
             Image("bottom_bg")
                 .resizable()
                 .scaledToFill()
@@ -30,28 +32,42 @@ struct SignInView: View {
                         .multilineTextAlignment(.leading)
                         .padding(.top, 350)
                         .padding(.trailing, 130)
-                        .padding(.bottom, 20)
+                        .padding(.bottom, 25)
                     
-                    HStack{
-                        Button{
-                            isShowPicker = true
-                        } label: {
-                            if let countryObj = countryObj{
-                                Text("\( countryObj.isoCode.getFlag())")
-                                    .font(.customfont(.medium, fontSize: 35))
-                                    .padding(.leading, 25)
-                                
-                                Text("+\( countryObj.phoneCode )")
-                                    .font(.customfont(.medium, fontSize: 18))
-                                    .foregroundColor(.primaryText)
+                    HStack(spacing: 12) {
+                        Button(action: {
+                            showCountryPicker = true
+                        }) {
+                            HStack(spacing: 4) {
+                                Text(selectedCountry.flag)
+                                    .font(.system(size: 22))
+                                Text(selectedCountry.dialCode)
+                                    .font(.system(size: 18))
+                                    .foregroundColor(.black)
+                            }
+                            .frame(width: 100)
+                            .padding(.leading, -10)
+                        }
+                        .sheet(isPresented: $showCountryPicker) {
+                            NavigationView {
+                                CountryPickerView(selectedCountry: $selectedCountry)
+                                    .navigationTitle("Select Country")
+                                    .navigationBarTitleDisplayMode(.inline)
                             }
                         }
-                        TextField("Enter Mobile", text: $txtMobile)
-                            .frame(minWidth: 0, maxWidth: .infinity)
-                            .padding(.trailing, 188)
+                        iPhoneNumberField("Enter phone number", text: $phoneNumber)
+                            .flagHidden(true)
+                            .flagSelectable(false)
+                            .formatted(true)
+                            .font(UIFont(size: 16, weight: .regular))
                     }
-                    .padding(.bottom, 15)
+                    .padding(.horizontal, 24)
                     
+                    Rectangle()
+                        .frame(height: 1)
+                        .foregroundColor(.gray.opacity(0.3))
+                        .padding(.horizontal, 30)
+                        .padding(.bottom, 25)
                     
                     NavigationLink {
                         LoginView()
@@ -87,7 +103,7 @@ struct SignInView: View {
                     
                     
                     VStack{
-                    
+                        
                         Text("or connnect with social media")
                             .font(.customfont(.semibold, fontSize: 16))
                             .foregroundColor(.textTitle)
@@ -116,10 +132,7 @@ struct SignInView: View {
                 }
                 .padding(.top, 50)
             }
-
-            .onAppear{
-                self.countryObj = Country(phoneCode: "91", isoCode: "IN")
-            }
+            
             VStack{
                 HStack{
                     NavigationLink{
@@ -136,11 +149,8 @@ struct SignInView: View {
             }
             .padding(.top, 60)
             .padding(.horizontal, 20)
-
+            
         }
-        .sheet(isPresented: $isShowPicker, content: {
-            CountryPickerUI(country: $countryObj)
-        })
         
         .navigationTitle("")
         .ignoresSafeArea()
@@ -150,7 +160,7 @@ struct SignInView: View {
 }
 
 #Preview {
-    NavigationView{
+    NavigationStack {
         SignInView()
     }
 }
