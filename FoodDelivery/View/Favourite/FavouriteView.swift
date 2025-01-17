@@ -9,14 +9,7 @@ import SwiftUI
 
 struct FavouriteView: View {
     var body: some View {
-        NavigationStack {
-            VStack {
-                Text("This is favourite view page")
-                    .font(.customfont(.semibold, fontSize: 20))
-            }
-            .navigationTitle("")
-            .navigationBarTitleDisplayMode(.inline)
-        }
+        Text("Favourite View")
     }
 }
 

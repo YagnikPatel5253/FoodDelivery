@@ -46,7 +46,7 @@ struct SignInView: View {
                                     .foregroundColor(.black)
                             }
                             .frame(width: 100)
-                            .padding(.leading, -10)
+                            .padding(.leading, -20)
                         }
                         .sheet(isPresented: $showCountryPicker) {
                             NavigationView {
@@ -76,10 +76,11 @@ struct SignInView: View {
                             .font(.customfont(.semibold, fontSize: 18))
                             .foregroundColor(.white)
                             .multilineTextAlignment(.center)
+                            .frame( minWidth: 0, maxWidth: .infinity, minHeight: 60, maxHeight: 60 )
+                            .background(Color(hex: "5383EC"))
+                            .cornerRadius(20)
                     }
-                    .frame( minWidth: 0, maxWidth: .infinity, minHeight: 60, maxHeight: 60 )
-                    .background(Color(hex: "5383EC"))
-                    .cornerRadius(20)
+                    
                     .padding(.horizontal, 20)
                     .padding(.bottom, 5)
                     
@@ -91,10 +92,11 @@ struct SignInView: View {
                             .font(.customfont(.semibold, fontSize: 18))
                             .foregroundColor(.white)
                             .multilineTextAlignment(.center)
+                            .frame( minWidth: 0, maxWidth: .infinity, minHeight: 60, maxHeight: 60 )
+                            .background(Color.primaryApp)
+                            .cornerRadius(20)
                     }
-                    .frame( minWidth: 0, maxWidth: .infinity, minHeight: 60, maxHeight: 60 )
-                    .background(Color.primaryApp)
-                    .cornerRadius(20)
+                    
                     .padding(.horizontal, 20)
                     
                     Divider()

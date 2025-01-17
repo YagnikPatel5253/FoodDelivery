@@ -2,9 +2,10 @@ import SwiftUI
 
 class HomeViewModel: ObservableObject
 {
-    static var shared: HomeViewModel = HomeViewModel()
+    static let shared = HomeViewModel()
 
     @Published var selectTab: Int = 0
     
+    private init() {}
 }
 

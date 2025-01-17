@@ -5,76 +5,43 @@ struct MainTabView: View {
     @StateObject var homeVM = HomeViewModel.shared
     
     var body: some View {
-        ZStack{
-            
+        ZStack {
             if(homeVM.selectTab == 0) {
                 HomeView()
-            }else if(homeVM.selectTab == 1) {
+            } else if(homeVM.selectTab == 1) {
                 ExploreView()
-            }else if(homeVM.selectTab == 2) {
+            } else if(homeVM.selectTab == 2) {
                 MyCartView()
-            }else if(homeVM.selectTab == 3) {
+            } else if(homeVM.selectTab == 3) {
                 FavouriteView()
-            }else if(homeVM.selectTab == 4) {
+            } else if(homeVM.selectTab == 4) {
                 AccountView()
             }
             
-            VStack{
-                
+            VStack {
                 Spacer()
                 
-                HStack{
-                    
-                    TabButton(title: "Shop", icon: "store_tab", isSelect: homeVM.selectTab == 0) {
-                        
-                        print("Button Tab")
-                        
-                        DispatchQueue.main.async {
-                             
-                            withAnimation {
-                                homeVM.selectTab = 0
-                            }
-                        }
-                        
-                       
-                    }
-                    TabButton(title: "Explore", icon: "explore_tab", isSelect: homeVM.selectTab == 1) {
-                        DispatchQueue.main.async {
-                             
-                            withAnimation {
-                                homeVM.selectTab = 1
-                            }
-                        }
+                // Custom Tab Bar
+                HStack {
+                    TabButton(title: "Shop", icon: "storefront", isSelect: homeVM.selectTab == 0) {
+                        homeVM.selectTab = 0
                     }
                     
-                    TabButton(title: "Cart", icon: "cart_tab", isSelect: homeVM.selectTab == 2) {
-                        DispatchQueue.main.async {
-                             
-                            withAnimation {
-                                homeVM.selectTab = 2
-                            }
-                        }
+                    TabButton(title: "Explore", icon: "magnifyingglass", isSelect: homeVM.selectTab == 1) {
+                        homeVM.selectTab = 1
                     }
                     
-                    TabButton(title: "Favourite", icon: "fav_tab", isSelect: homeVM.selectTab == 3) {
-                        DispatchQueue.main.async {
-                             
-                            withAnimation {
-                                homeVM.selectTab = 3
-                            }
-                        }
+                    TabButton(title: "Cart", icon: "cart", isSelect: homeVM.selectTab == 2) {
+                        homeVM.selectTab = 2
                     }
                     
-                    TabButton(title: "Account", icon: "account_tab", isSelect: homeVM.selectTab == 4) {
-                        DispatchQueue.main.async {
-                             
-                            withAnimation {
-                                homeVM.selectTab = 4
-                            }
-                        }
+                    TabButton(title: "Favourite", icon: "heart", isSelect: homeVM.selectTab == 3) {
+                        homeVM.selectTab = 3
                     }
                     
-                                    
+                    TabButton(title: "Account", icon: "person", isSelect: homeVM.selectTab == 4) {
+                        homeVM.selectTab = 4
+                    }
                 }
                 .padding(.top, 10)
                 .padding(.bottom, .bottomInsets)
@@ -88,6 +55,34 @@ struct MainTabView: View {
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
         .ignoresSafeArea()
+    }
+}
+
+// TabButton Component
+struct TabButton: View {
+    var title: String
+    var icon: String
+    var isSelect: Bool
+    var didSelect: (() -> Void)
+    
+    var body: some View {
+        Button {
+            withAnimation(.easeInOut) {
+                didSelect()
+            }
+        } label: {
+            VStack(spacing: 4) {
+                Image(systemName: icon)
+                    .font(.system(size: 22))
+                    .environment(\.symbolVariants, isSelect ? .fill : .none)
+                    .foregroundColor(isSelect ? .primaryApp : .black)
+                
+                Text(title)
+                    .font(.customfont(.semibold, fontSize: 12))
+                    .foregroundColor(isSelect ? .primaryApp : .black)
+            }
+        }
+        .frame(minWidth: 0, maxWidth: .infinity)
     }
 }
 

@@ -1,9 +1,9 @@
 import Foundation
 
 enum Country: String, CaseIterable, Identifiable {
-    case afghanistan, albania, algeria, andorra, angola, argentina, armenia, australia, austria, azerbaijan
+    case albania, algeria, andorra, angola, argentina, armenia, australia, austria, azerbaijan
     case bahrain, bangladesh, belarus, belgium, bhutan, brazil
-    case cambodia, cameroon, canada, chile, china, colombia, croatia, cyprus, czechRepublic
+    case cambodia, cameroon, canada, chile, colombia, croatia, cyprus, czechRepublic
     case denmark, dominicanRepublic
     case ecuador, egypt, estonia, ethiopia
     case fiji, finland, france
@@ -30,7 +30,7 @@ enum Country: String, CaseIterable, Identifiable {
     
     var flag: String {
         switch self {
-        case .afghanistan: return "🇦🇫"
+//        case .afghanistan: return "🇦🇫"
         case .albania: return "🇦🇱"
         case .algeria: return "🇩🇿"
         case .andorra: return "🇦🇩"
@@ -50,7 +50,7 @@ enum Country: String, CaseIterable, Identifiable {
         case .cameroon: return "🇨🇲"
         case .canada: return "🇨🇦"
         case .chile: return "🇨🇱"
-        case .china: return "🇨🇳"
+//        case .china: return "🇨🇳"
         case .colombia: return "🇨🇴"
         case .croatia: return "🇭🇷"
         case .cyprus: return "🇨🇾"
@@ -145,7 +145,7 @@ enum Country: String, CaseIterable, Identifiable {
     
     var dialCode: String {
         switch self {
-        case .afghanistan: return "+93"
+//        case .afghanistan: return "+93"
         case .albania: return "+355"
         case .algeria: return "+213"
         case .andorra: return "+376"
@@ -165,7 +165,7 @@ enum Country: String, CaseIterable, Identifiable {
         case .cameroon: return "+237"
         case .canada: return "+1"
         case .chile: return "+56"
-        case .china: return "+86"
+//        case .china: return "+86"
         case .colombia: return "+57"
         case .croatia: return "+385"
         case .cyprus: return "+357"
