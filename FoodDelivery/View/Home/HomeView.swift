@@ -27,14 +27,66 @@ struct HomeView: View {
                         .padding(.horizontal, 15)
                         .padding(.top, -5)
                         .padding(.bottom, 15)
+                    
                     SectionTitleAll(title: "Exclusive Offer"){
-                        // code
                     }
+                    .padding(.bottom, 10)
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        LazyHStack(spacing: 15) {
+                            ForEach(0...5, id: \.self) { index in
+                                ProductCell(didAddCart: {
+                                    // Add your cart action here
+                                    print("Add to cart tapped")
+                                })
+                            }
+                        }
+                        .padding(.horizontal)
+                    }
+                    .padding(.bottom, 15)
+                    
+                    
                     SectionTitleAll(title: "Best Selling"){
                         // code
                     }
+                    .padding(.bottom, 10)
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        LazyHStack(spacing: 15) {
+                            ForEach(0...5, id: \.self) { index in
+                                ProductCell(didAddCart: {
+                                    // Add your cart action here
+                                    print("Add to cart tapped")
+                                })
+                            }
+                        }
+                        .padding(.horizontal)
+                    }
+                    .padding(.bottom, 15)
                     SectionTitleAll(title: "Groceries"){
                         // code
+                    }
+                    .padding(.bottom, 10)
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        LazyHStack(spacing: 15) {
+                            ForEach(0...5, id: \.self) { index in
+                                CategoryCell(didAddCart: {
+                                    // Add your cart action here
+                                    print("Add to cart tapped")
+                                })
+                            }
+                        }
+                        .padding(.horizontal)
+                    }
+                    .padding(.bottom, 10)
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        LazyHStack(spacing: 15) {
+                            ForEach(0...5, id: \.self) { index in
+                                ProductCell(didAddCart: {
+                                    // Add your cart action here
+                                    print("Add to cart tapped")
+                                })
+                            }
+                        }
+                        .padding(.horizontal)
                     }
                     
                 }
