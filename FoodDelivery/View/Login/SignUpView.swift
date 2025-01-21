@@ -109,15 +109,12 @@ struct SignUpView: View {
                 
             }
             
-            VStack{
-                HStack{
-                    Button{
-                        mode.wrappedValue.dismiss()
-                    } label: {
-                        Image("back")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 20, height: 20)
+            
+            // Back Button
+            VStack {
+                HStack {
+                    BackButton {
+                        SignInView()
                     }
                     Spacer()
                 }
@@ -126,6 +123,8 @@ struct SignUpView: View {
             .padding(.top, 60)
             .padding(.horizontal, 20)
         }
+        
+        // Alert
         .alert(isPresented: $mainVM.showError, content: {
             Alert(title: Text(Globs.AppName), message: Text(mainVM.errorMessage) , dismissButton: .default(Text("Ok")))
         })

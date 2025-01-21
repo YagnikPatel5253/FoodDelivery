@@ -135,15 +135,10 @@ struct SignInView: View {
                 .padding(.top, 50)
             }
             
-            VStack{
-                HStack{
-                    NavigationLink{
+            VStack {
+                HStack {
+                    BackButton {
                         WelcomeView()
-                    } label: {
-                        Image("back")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 20, height: 20)
                     }
                     Spacer()
                 }
