@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		120AF6682D3CD4A5000C7217 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 120AF6672D3CD4A5000C7217 /* SDWebImageSwiftUI */; };
 		12FEA1F92D393A8C00D495A7 /* iPhoneNumberField in Frameworks */ = {isa = PBXBuildFile; productRef = 12FEA1F82D393A8C00D495A7 /* iPhoneNumberField */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				120AF6682D3CD4A5000C7217 /* SDWebImageSwiftUI in Frameworks */,
 				12FEA1F92D393A8C00D495A7 /* iPhoneNumberField in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -131,6 +133,7 @@
 			name = FoodDelivery;
 			packageProductDependencies = (
 				12FEA1F82D393A8C00D495A7 /* iPhoneNumberField */,
+				120AF6672D3CD4A5000C7217 /* SDWebImageSwiftUI */,
 			);
 			productName = FoodDelivery;
 			productReference = 1267424E2D2797150049F339 /* FoodDelivery.app */;
@@ -216,6 +219,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				12FEA1F72D393A8C00D495A7 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */,
+				120AF6662D3CD4A5000C7217 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 1267424F2D2797150049F339 /* Products */;
@@ -592,6 +596,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		120AF6662D3CD4A5000C7217 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.3;
+			};
+		};
 		12FEA1F72D393A8C00D495A7 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/MojtabaHs/iPhoneNumberField.git";
@@ -603,6 +615,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		120AF6672D3CD4A5000C7217 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 120AF6662D3CD4A5000C7217 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
 		12FEA1F82D393A8C00D495A7 /* iPhoneNumberField */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 12FEA1F72D393A8C00D495A7 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */;

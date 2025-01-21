@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct HomeView: View {
+    @StateObject var homeVM = HomeViewModel.shared
+    
     var body: some View {
         ZStack{
             ScrollView{
@@ -33,10 +35,10 @@ struct HomeView: View {
                     .padding(.bottom, 10)
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHStack(spacing: 15) {
-                            ForEach(0...5, id: \.self) { index in
-                                ProductCell(didAddCart: {
-                                    // Add your cart action here
-                                    print("Add to cart tapped")
+                            ForEach(homeVM.offerArr, id: \.id) {
+                                pObj in
+                                ProductCell(pObj: pObj, didAddCart: {
+                                    
                                 })
                             }
                         }
@@ -51,10 +53,9 @@ struct HomeView: View {
                     .padding(.bottom, 10)
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHStack(spacing: 15) {
-                            ForEach(0...5, id: \.self) { index in
-                                ProductCell(didAddCart: {
-                                    // Add your cart action here
-                                    print("Add to cart tapped")
+                            ForEach (homeVM.bestArr, id: \.id) {
+                                pObj in
+                                ProductCell(pObj: pObj, didAddCart: {
                                 })
                             }
                         }
@@ -67,29 +68,30 @@ struct HomeView: View {
                     .padding(.bottom, 10)
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHStack(spacing: 15) {
-                            ForEach(0...5, id: \.self) { index in
-                                CategoryCell(didAddCart: {
-                                    // Add your cart action here
-                                    print("Add to cart tapped")
-                                })
+                            ForEach (homeVM.typeArr, id: \.id) {
+                                tObj in
+                                
+                                CategoryCell(tObj: tObj) {
+                                    
+                                }
                             }
                         }
-                        .padding(.horizontal)
                     }
-                    .padding(.bottom, 10)
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        LazyHStack(spacing: 15) {
-                            ForEach(0...5, id: \.self) { index in
-                                ProductCell(didAddCart: {
-                                    // Add your cart action here
-                                    print("Add to cart tapped")
-                                })
-                            }
-                        }
-                        .padding(.horizontal)
-                    }
-                    
+                    .padding(.horizontal)
                 }
+                .padding(.bottom, 10)
+                ScrollView(.horizontal, showsIndicators: false) {
+                    LazyHStack(spacing: 15) {
+                        ForEach(homeVM.listArr, id: \.id) {
+                            pObj in
+                            ProductCell(pObj: pObj, didAddCart: {
+                                
+                            })
+                        }
+                    }
+                    .padding(.horizontal)
+                }
+                
             }
         }
     }
