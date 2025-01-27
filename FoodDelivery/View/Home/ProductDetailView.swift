@@ -1,9 +1,4 @@
-//
-//  ProductDetailView.swift
-//  OnlineGroceriesSwiftUI
-//
-//  Created by CodeForAny on 05/08/23.
-//
+// Product Detail Page
 
 import SwiftUI
 import SDWebImageSwiftUI
