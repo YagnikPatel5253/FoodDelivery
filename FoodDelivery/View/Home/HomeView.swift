@@ -29,24 +29,7 @@ struct HomeView: View {
                         .padding(.horizontal, 15)
                         .padding(.top, -5)
                         .padding(.bottom, 15)
-                    
-//                    SectionTitleAll(title: "Exclusive Offer"){
-//                    }
-//                    .padding(.bottom, 10)
-//                    ScrollView(.horizontal, showsIndicators: false) {
-//                        LazyHStack(spacing: 15) {
-//                            ForEach(homeVM.offerArr, id: \.id) {
-//                                pObj in
-//                                ProductCell(pObj: pObj, didAddCart: {
-//                                    
-//                                })
-//                            }
-//                        }
-//                        .padding(.horizontal)
-//                    }
-//                    .padding(.bottom, 15)
-                    
-                    
+                
                     SectionTitleAll(title: "Best Selling"){
                         // code
                     }
